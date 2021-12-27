@@ -1,0 +1,51 @@
+body{
+    background: url('../../../assets/image/fondo.jpg');
+    height: 100%;
+    width: 100%;
+}
+
+#caja_login{
+    width: 700px;       
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+#logo{
+    border-right: 2px solid white;
+    float: left;
+    width: 44.25%;
+    height: 100%;
+}
+
+ #usuario, #contraseña{
+     width: 400px;
+ }
+ 
+#btn_login{
+    background-color: gray;
+    width:350px;
+    margin-left: 20px;
+}
+#login{
+    border-left: 3px solid white;
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding-left: 35px;
+}
+#caja{
+    margin-top: 7%;
+}
+.title{
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+.subtitle{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    color: rgb(219, 219, 219);
+    margin-top: -12px;
+}

@@ -1,0 +1,132 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+<body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form (submit)="signIn()" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" [(ngModel)]="usuario.nomuser" placeholder="Username" name="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" [(ngModel)]="usuario.password" placeholder="Password" name="Password"/>
+            </div>
+            <input type="submit" value="INGRESAR" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+          <div  class="sign-up-form">
+            <h2 class="title">Ingrese sus Datos: </h2>
+            <div style="float: left; display: block;">
+              <div style="float:left">
+              <label for="" id="labelagr"> Nombres: </label>
+              <input type="text"  class="form-control" id="inputmodal" placeholder="Ingrese Nombres" [(ngModel)]="docentes1.nombres">
+              <br>
+              <label for="" id="labelagr"> Apellidos: </label>
+              <input type="text"  class="form-control" id="inputmodal" placeholder="Ingrese Apellidos" [(ngModel)]="docentes1.apellidos">
+              <br>
+              <label for="" id="labelagr"> DNI: </label>
+              <input type="text"  class="form-control" id="inputmodal" placeholder="Ingrese DNI" [(ngModel)]="docentes1.dni">
+              <br>
+              <label for="" id="labelagr"> Correo: </label>
+              <input type="email"  class="form-control" id="inputmodal" placeholder="Ingrese Correo" [(ngModel)]="docentes1.correo">
+              <br>
+              <label for="" id="labelagr"> Teléfono: </label>
+              <input type="text"  class="form-control" id="inputmodal" placeholder="Ingrese Teléfono" [(ngModel)]="docentes1.telefono">
+              <br>
+              <label for="" id="labelagr"> Codigo: </label>
+              <input type="text"  class="form-control" id="inputmodal" placeholder="Ingrese Código Docente" [(ngModel)]="docentes1.codigodocente">
+              <br>
+            </div>
+            <div style="float: right;">
+              <label for="" id="labelagr"> Contrato: </label>
+              <select name="" id=""  id="inputmodal" class="form-control" placeholder="Seleccione Estado de Contrato" [(ngModel)]="docentes1.estadocontrato">
+                  <option value="0"> Seleccione Opción</option>
+                  <option value="Activo">Activo</option>
+                  <option value="Inactivo">Inactivo</option>
+              </select>
+              <br>
+              <label for="" id="labelagr"> Campus: </label>
+              <select name="" id="inputmodal" class="form-control" placeholder="Seleccione Campus" [(ngModel)]="docentes1.idcampus">
+                  <option value="0"> Seleccione Campus</option>
+                  <option value="1">Lima</option>
+                  <option value="2">Juliaca</option>
+                  <option value="3">Tarapoto</option>
+              </select>
+              <br>
+              <label for="" id="labelagr"> Grado: </label>
+              <select name="" id="inputmodal" class="form-control" placeholder="Seleccione Grado" [(ngModel)]="docentes1.idgrado">
+                  <option value="0">asdasd</option>
+                  <option *ngFor="let gra of listarGRADO" [value]="gra.idgrado">{{gra.grado}}</option>
+              </select>
+              <br>
+              <label for="" id="labelagr"> Categoria: </label>
+              <select name="" id="inputmodal" class="form-control" placeholder="Seleccione Categoria" [(ngModel)]="docentes1.idcategoria">
+                  <option value="0">asdasd</option>
+                  <option *ngFor="let cate of listarCATEGORIA" [value]="cate.idcategoria">{{cate.categoria}}</option>
+              </select>
+                <br>
+              <label for="" id="labelagr"> Facultad: </label>
+              <select name="" id="inputmodal" class="form-control" placeholder="Seleccione Facultad" [(ngModel)]="escuelaF.idespecialidad" (click)="getEscuelaS()" >
+                  <option value="0" selected>asdasd</option>
+                  <option *ngFor="let facultad of listarFacultades" [value]="facultad.idespecialidad">{{facultad.nombre}}</option>
+              </select>
+              <br>
+              <label for="" id="labelagr"> Escuela: </label>
+              <select name=""  id="inputmodal" class="form-control" placeholder="Seleccione Escuela" [(ngModel)]="docentes1.idespecialidad" >
+                  <option value="0">asdasd</option>
+                  <option [value]="espe.idespecialidad" *ngFor="let espe of listarFac">{{espe.nombre}}</option>
+              </select>
+            </div>
+          </div>
+
+<br>
+
+
+            <input type="submit" class="btn" (click)="crearDocente()"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>¿No tienes Cuenta?</h3>
+            <p>
+              Solicita tu participación,
+              completando este formulario
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              CLICK AQUI
+            </button>
+          </div>
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>VOLVER AL LOGIN</h3>
+            <br>
+            <button class="btn transparent" id="sign-in-btn">
+              CLICK AQUI
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>

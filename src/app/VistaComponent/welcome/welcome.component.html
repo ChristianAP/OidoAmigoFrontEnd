@@ -1,0 +1,26 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap" rel="stylesheet">
+<body>
+    <header>
+        <div class="container">
+            
+            <div class="textos">
+                <h1 style="margin-bottom: 50px;margin-top: 240px; font-family: 'Readex Pro', sans-serif;">HOLA...</h1>
+                <h1 style="font-family: 'Readex Pro', sans-serif;">BIENVENIDO A</h1>
+                <h2 style="margin-top: 120px;">Estamos aqui para escucharte ...</h2>
+                <h3 style= "margin-left: 80px">¿Tienes una cuenta?</h3>
+                <a style="margin-left:-40px"  [routerLink]="['/PLogin']">PACIENTE</a>
+                <a [routerLink]="['/login']">PSICOLOGO</a>
+                <a style="width: 400px; margin-right:-700px; float: right; margin-top: -46px;" href="http://localhost:4200/welcome#lancha">¿Necesita Ayuda? Dame click ...</a>
+            </div>
+            <img src="../../../assets/image/OidoAmigo.png" style="height: 170px;" alt="" >
+        </div>
+    </header>
+    <div class="wave">
+        <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    </div>
+</body>
+<a name="lancha" id="lancha"></a>
+
+<app-solicitud></app-solicitud>

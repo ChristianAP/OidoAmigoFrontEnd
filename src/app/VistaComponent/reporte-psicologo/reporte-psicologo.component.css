@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
+body {
+    background:#00acee;
+    font-family:"Raleway";
+  }
+.tabs {
+  width:100%;
+  height:120%;
+}
+.tabs .tab-header {
+  display:flex;
+  height:80px;
+}
+.tabs .tab-header > div {
+  position:relative;
+  width:calc(100% / 2);
+  height:100%;
+  text-align:center;
+  line-height:80px;
+  font-weight:600;
+  color:black;
+  cursor:pointer;
+  z-index:2;
+}
+.tabs .tab-header > div:before {
+  content:"";
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  height:0%;    
+  z-index:-1;
+}
+.tabs .tab-header > div:hover:before {
+  transition:all 300ms ease-in-out;
+  height:5%;
+}
+.tabs .tab-header > div.active {
+  color:#00acee;
+  background-color: #00acee;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.2s;
+}
+.tabs .tab-header > div.active:before {
+  transition:all 300ms ease-in-out;
+  height:100%;
+}
+.tabs .tab-content {
+  position:relative;
+  height:calc(100% - 80px);
+}
+.tabs .tab-content > div {
+  position:absolute;
+  transform:scale(0.5);
+  opacity:0;
+  top:100%;
+  padding:20px;
+  transition:all 500ms ease-in-out;
+}
+.tabs .tab-content > div.active {
+  transform:scale(1);
+  opacity:1;
+  top:0%;
+}
+
+#caja_estudiante{
+  overflow:auto;
+  height: 550px;
+}
+#caja_estudiante::-webkit-scrollbar{
+  width:2px;
+  background: transparent;
+}
+
+#caja_estudiante::-webkit-scrollbar-thumb{
+  background: #00acee;
+  border-radius: 5px;
+}
+
+#caja_egresado{
+  overflow:auto;
+  height: 550px;
+}
+#caja_egresado::-webkit-scrollbar{
+  width:2px;
+  background: transparent;
+}
+
+#caja_egresado::-webkit-scrollbar-thumb{
+  background: #00acee;
+  border-radius: 5px;
+}
+#contenedor_list{
+    padding: 10px 10px 10px 35px;
+    cursor: pointer;
+    margin-right: 120px;
+}
+#list_egresado{
+    float: right;
+    border: 3px solid #e2e2e2;
+    border-radius:3px;
+    margin: 10px;
+    cursor: pointer;
+    width: 60%;
+    background-color:#f9f9f9 ;
+}
+#list_estudiante{
+    float: right;
+    border: 3px solid #e2e2e2;
+    border-radius:3px;
+    margin: 10px;
+    cursor: pointer;
+    width: 60%;
+    background-color:#f9f9f9 ;
+}
+#nombres{
+    text-transform: uppercase;
+    font-size:20px;
+}
+#correo, #codigo{
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    color: red;
+    text-transform: uppercase;
+    font-size:17px;
+}
+#user{
+    width:85px;
+    float: right;
+    margin-right: 20%;
+    margin-top: -93px;
+}
+#icon{
+    font-size: 50px;
+    float: right;
+    margin-right: 8%;
+    margin-top: -75px;
+}
+
+.modal-title{
+    font-size: 20px;
+    margin-bottom:-10px;
+    margin-left: 38%;
+    font-weight: bold;
+}
+#title_estudiante{
+  margin-top: 110px;
+  padding-left: 20px;
+  float: left;
+  width: 50%;
+	position: fixed;
+}
+#t_estu{
+  font-family: 'Varela Round', sans-serif;
+  width: 300px;
+  font-size: 41px;
+  margin-bottom: 5px;
+  width: 50%;
+  font-weight: bold;
+}
+#sub_estu{
+  width:48%;
+  font-weight: normal;
+  font-size: medium;
+  margin-top: 10px;
+}
+#logo_registro{
+  width: 180px;
+  margin-left: 70px;
+  margin-top: 10px;
+}
+
+#nombre_modal{
+  float: left;
+  width: 48%;
+}
+#apellido_modal{
+  float: right;
+  width: 50%;
+}
+#genero_modal{
+  float: left;
+  width: 48%;
+}
+
+#dni_modal{
+  float: right;
+  width: 50%;
+}
+#celular_modal{
+  float: left;
+  width: 48%;
+}
+
+#ciudad_modal{
+  float: right;
+  width: 50%;
+}
+#codigo_modal{
+  float: left;
+  width: 48%;
+}
+
+#horario_modal{
+  float: right;
+  width: 50%;
+}
+#ciclo_modal{
+  float: left;
+  width: 48%;
+}
+
+#grupo_modal{
+  float: right;
+  width: 50%;
+}
+#data{
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+}
+#buton_modal{
+  margin-top: 10px;
+}
+.btn_modal{
+  margin-left: 10px;
+  width:50px;
+  height:50px;
+  text-align: center;
+}
+mat-icon{
+  font-size:22px;
+  margin-top: -3px;
+}

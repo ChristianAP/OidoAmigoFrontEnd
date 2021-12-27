@@ -1,0 +1,299 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+#no_data{
+    margin-top: 50px;
+    width: 100%;
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+
+}
+#no_data, #data{
+    display: none;
+}
+#agree, #agree1, #agree2{
+    display: none;
+}
+
+#logo{
+    text-align: center;
+    font-size: 15px;
+}
+#title{
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+#data_persona{
+    float: left;
+    margin-top: 10px;
+    width: 30%;
+    border-radius: 20px;
+    background-color:white;
+    box-shadow: 0px 0px 30px grey;
+}
+#data_paciente{
+    float: right;
+    width: 68%;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    height: 150px;
+    background-color:white;
+    box-shadow: 0px 0px 30px grey;
+}
+#sesiones{
+    float: right;
+    width: 68%;
+}
+#generarSesion{
+    float: left;
+    width: 79%;
+    border-radius: 20px;
+    height: 378px;
+    background-color:white;
+    box-shadow: 0px 0px 30px grey;
+}
+#report1, #report2, #report3{
+    float: right;
+    width: 19%;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    height: 122px;
+    background-color:white;
+    box-shadow: 0px 0px 30px grey;
+    display: none;
+    border: none;
+}
+#reportFinal{
+    float: right;
+    width: 19%;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    height: 379px;
+    background-color:white;
+    box-shadow: 0px 0px 30px grey;
+    border: none;
+    display: none;
+}
+#report1:hover{background-color:blue; color: white}
+#report2:hover{background-color:blue; color: white}
+#report3:hover{background-color:blue; color: white}
+#reportFinal:hover{background-color:brown; color: white}
+strong{
+    margin-left: 40px;
+    margin-right: 20px;
+    font-size: 13.86px;
+}
+p{
+    font-size: 13.86px;
+}
+hr{
+    width: 92%;
+    margin: auto;
+    margin-bottom: 5px;
+    background-color: black;
+    border: 0.5px solid black;
+    visibility: hidden;
+}
+#data_solicitud{
+    float: left;
+    width: 50%;
+}
+#descripcion{
+    float: right;
+    width: 50%;
+}
+#cajaDescripcion{
+    margin-top: -25px; 
+    margin-left: -35px;
+    border: none;
+    overflow: auto;
+    height: 90px;
+    width: 450px;
+    text-align: left;
+    background-color: transparent;
+}
+
+#centro{
+    margin:auto;
+    margin-top: 40px;
+    width:85%;
+    height: 250px;
+}
+#sesion1{
+    width:33%;
+    float: left;
+    text-align:center;
+    margin-top: 20px;
+}
+#s23{
+    float:right;
+    width: 65%;
+}
+#sesion2{
+    width:48.5%;
+    float: left;
+    text-align:center;
+    margin-top: 20px;
+}
+#sesion3{
+    width:48.5%;
+    float: right;
+    text-align:center;
+    margin-top: 20px;
+}
+#t_sesion1, #t_sesion2, #t_sesion3{
+    font-size: 20px;
+    font-weight: bold;
+}
+#btn_agree{
+    margin-top: 10px;
+    width: 80%;
+    font-size:70px;
+    height: 150px;
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+}
+#btn_agree:hover{
+    color: white;
+    background-color:green;
+}
+
+#editarSesion2{
+    margin-top: 10px;
+    width: 80%;
+    font-size:50px;
+    height: 120px;
+    background-color: aqua;
+    border: 1px solid black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+#data2{
+    margin: auto;
+    margin-top: 10px;
+    width: 80%;
+    font-size:70px;
+    height: 120px;
+    border-radius: 20px;
+    padding-top: 30px;
+}
+#hov #edit2 { 
+    display: none; 
+}
+#hov:hover #data2 { 
+    display: none; 
+}
+#hov:hover #edit2 { 
+    display: inline; 
+}
+#a{
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 2px;
+    width: 80%;
+    height: 30px;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+body{
+  overflow: auto;
+  height: 590px;;
+}
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+    margin-top: 10px;
+  }
+  #h12{
+    font-family: 'Baloo Bhaijaan 2', cursive;
+  }
+  h1{
+    font-family: 'Roboto', sans-serif;
+  }
+
+  #caja{
+    vertical-align: center;
+    background-color: rgb(160, 55, 55);
+    padding-top: -420px;
+  }
+
+  #caja2{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 21px;
+    vertical-align: center;
+  }
+
+  #txt_prin{
+    width: 600px;
+    height: 100%;
+  }
+  #title2{
+    vertical-align:center;
+  }
+  #left{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 16px;
+    border-right: 1px solid black;
+    width: 49%;
+    height: 90px;
+    margin-bottom: 20px;
+  }
+  #right{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 16px;
+    width: 49%;
+    border-left: 1px solid black;
+    height: 90px;
+    margin-bottom: 20px;
+  }
+  #fin{
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    margin-left: -80px;
+  }
+#fecha_lbl{
+    float: left;
+    width: 49%;
+}
+#hora_lbl{
+    float: right;
+    width: 49%;
+}
+#obs_lbl{
+    float: left;
+    width: 49%;
+}
+#ant_lbl{
+    float: right;
+    width: 49%;
+}
+#prob_lbl{
+    float: left;
+    width: 49%;
+}
+#acc_lbl{
+    float: right;
+    width: 49%;
+}
+#concl_lbl{
+    float: left;
+    width: 49%;
+}
+#reco_lbl{
+    float: right;
+    width: 49%;
+}

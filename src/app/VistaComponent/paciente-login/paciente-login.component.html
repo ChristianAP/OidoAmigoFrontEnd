@@ -1,0 +1,34 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+<body >
+    <div id="caja_login">
+        <div id="logo">
+          <img src="assets/image/OidoAmigo.png" alt="" style="margin-top: 30%; margin-left: -170px;" width="350px">
+        </div>
+        <div id="login">
+          <div id="caja">
+            <h1 class="title" >BIENVENDIDO/A  ESTIMADO PACIENTE:</h1>
+            <h4 class= "subtitle" >Ingrese su DNI y Código de Paciente: </h4>
+            <form [formGroup]="signin">
+                  <mat-form-field class="example-full-width" appearance="fill" id="usuario">
+                        <mat-label>DNI: </mat-label>
+                        <input type="text" matInput [(ngModel)]="persona.dnipasaporte"  [formControl]="DNIFormControl"  placeholder="Ingrese su Nro DNI ..." >
+                        <mat-error *ngIf="!DNIInput">
+                          Ingrese un <strong>DNI</strong> válido
+                        </mat-error>
+                  </mat-form-field>            
+                  <mat-form-field class="example-full-width" appearance="fill"  id="contraseña">
+                    <mat-label>CÓDIGO DE PACIENTE: </mat-label>
+                      <input matInput placeholder="Código de Paciente ..." [(ngModel)]="persona.codigo_paciente"  [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      <mat-hint *ngIf="!passwordInput">Enter your password</mat-hint>
+                  </mat-form-field>
+
+                  <button mat-flat-button  id="btn_login" (click)="signIn()">INICIAR SESIÓN</button>
+            </form>    
+          </div>
+        </div>
+    </div>
+
+</body>

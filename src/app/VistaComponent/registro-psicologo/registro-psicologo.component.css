@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+#title{
+    margin-top: 240px;
+}
+h1{
+    font-family: 'Inter', sans-serif;
+    font-size: 50px;
+}
+img{
+    width:150px
+}
+#formCaja{
+    margin-top:-620px;
+    width: 45%;
+    height: 110%;
+    float:right;
+    overflow: auto;
+    margin-right: 50px;
+    padding-left: 25px;
+}
+
+#formCaja::-webkit-scrollbar{
+    width:5px;
+    background: transparent;
+}
+
+#formCaja::-webkit-scrollbar-thumb{
+    background: #9c254d;
+    border-radius: 5px;
+}
+ label{
+    margin-top: 10px;
+    width: 70%;
+}
+button{
+    float: right;
+    margin-top: 30px;
+    margin-left: 500px;
+}
+
+#name_lbl{
+    float: left;
+    width: 49%;
+}
+#last_lbl{
+    float: right;
+    width: 49%;
+}
+#email_lbl{
+    float: left;
+    width: 66%;
+}
+#genero_lbl{
+    float: right;
+    width: 32%;
+}
+#dni_lbl{
+    float: left;
+    width: 49%;
+}
+#cel_lbl{
+    float: right;
+    width: 49%;
+}
+#ciudad_lbl{
+    float: left;
+    width: 62%;
+}
+#rol_lbl{
+    float: right;
+    width: 36%;
+}
+#codeEg_lbl{
+    float: left;
+    width: 49%;
+}
+#passEg_lbl{
+    float: right;
+    width: 49%;
+}
+#horarioEg_lbl{
+    float: left;
+    width: 49%;
+}
+#grado_lbl{
+    float: right;
+    width: 49%;
+}
+#codeEs_lbl{
+    float: left;
+    width: 49%;
+}
+#passEs_lbl{
+    float: right;
+    width: 49%;
+}
+#horarioEs_lbl{
+    float: left;
+    width: 49%;
+}
+#e11{
+    float: right;
+    width: 49%;
+}
+#ciclo_lbl{
+    float: left;
+    width: 49%;
+}
+#grupo_lbl{
+    float: right;
+    width: 49%;
+}
+

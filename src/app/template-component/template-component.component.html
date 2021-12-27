@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <div class="sidebar close">
+    <div class="logo-details">
+      <img src="assets/image/OidoAmigo.png" alt="" width="180px" class="img">
+    </div>
+    <div class="logo-details2">
+      <img src="assets/image/sublogoBN.png" alt="" width="70px" class="img2">
+    </div>
+    <ul class="nav-links">
+
+      <li style="margin-top: 10px; margin-bottom: 10px;" *ngFor="let opcion of listOpciones">
+        <a [routerLink]="[opcion.routerlink]">
+          <i class="{{opcion.i}}"></i>
+          <span class="link_name">{{opcion.nombre1}}</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" >{{opcion.nombre2}}</a></li>
+        </ul>
+      </li>
+      <li>
+        <a (click)="logout()">
+          <i class='bx bx-log-out'></i>
+          <span class="link_name">Sign off</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Sign off</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <img src="assets/image/fondologin.png" alt="profileImg">
+      </div>
+      <div class="name-job" style="margin-right: 30px;">
+        <div class="profile_name">{{this.nombre}} </div>
+        <div class="profile_name">{{this.apellido}}</div>
+        <div class="job">{{this.nombre_rol}}</div>
+      </div>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+  <body>
+          <div id="caja">
+                <div id="contenedor">
+                    <router-outlet></router-outlet>
+            </div>
+        </div>
+</body>
+    </div>
+  </section>
+
+

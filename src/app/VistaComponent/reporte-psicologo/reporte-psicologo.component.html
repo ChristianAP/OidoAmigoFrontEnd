@@ -1,0 +1,229 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+ <div class="modal fade bd-example-modal-lg" id="DatosEgresado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" *ngFor="let egres of listEgresadoID" style="width: 950px; margin-left: -75px;">
+        <div class="modal-header" >
+          <h5 class="modal-title" id="exampleModalLabel">DATOS PSICOLOGO:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div style="width: 38%; float: left;">
+                <img src="../../../assets/image/psico_user.png" alt="" width="250px" style="margin-left: 50px; margin-top: 20px;">
+                <div id="data">
+                    <label for="" style="font-size:20px; font-weight: bold;">{{egres.nombre}}</label><br>
+                    <label for="" style="font-size:20px; font-weight: bold; margin-top: -5px;">{{egres.apellido}}</label><br>
+                    <label for="" style="font-family: cursive;">EGRESADO</label>
+                        <div id="buton_modal">
+                                <button mat-fab color="accent" aria-label="Example icon button with a home icon" class="btn_modal">
+                                    <mat-icon>wallpaper</mat-icon>
+                                </button>
+                                <button mat-fab color="primary" aria-label="Example icon button with a bookmark icon" class="btn_modal" (click)="modificar2()">
+                                    <mat-icon>create</mat-icon>
+                                </button>
+                                <button mat-fab color="warn" aria-label="Example icon button with a delete icon" class="btn_modal" (click)="DeleteEgresado(egres)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                        </div>
+                </div>
+            </div>
+
+            
+<div style="width: 60%; float: right;"> 
+    <div id="nombre_modal">
+            <label for=""> Nombres: </label>
+        <input id="nombre3" type="text" class="form-control" placeholder="Ingrese los nombres ..." [(ngModel)]="egres.nombre" disabled>
+    </div>
+    <div id="apellido_modal">
+    <label for=""> Apellidos: </label>
+        <input id="apellido3" type="text" class="form-control" placeholder="Ingrese los Apellidos ..." [(ngModel)]="egres.apellido" disabled>
+    </div>
+    <div id="correo_modal">
+    <label for=""> Correo Electrónico: </label>
+        <input id="correo3" type="text" class="form-control" placeholder="Ingrese Correo Electrónico ..." [(ngModel)]="egres.correo" disabled>
+    </div>
+    <div id="genero_modal">
+    <label for=""> Género: </label>
+        <select id="genero3" name=""  class="form-control"  [(ngModel)]="egres.genero" disabled>
+            <option value="No Especifica">No especificar</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+    </div>
+    <div id="dni_modal">
+    <label for=""> Ingrese su DNI: </label>
+        <input id="dni3" type="text" class="form-control" placeholder="Ingrese Nro. DNI ..."  [(ngModel)]="egres.dnipasaporte" disabled>
+    </div>
+    <div id="celular_modal">
+    <label for=""> Número de Celular: </label>
+        <input id="celular3" type="text" class="form-control" placeholder="Ingrese Nro. Celular ..." [(ngModel)]="egres.celular" disabled>
+    </div>
+    <div id="ciudad_modal">
+    <label for=""> Ciudad: </label>
+        <input id="ciudad3" type="text" class="form-control" placeholder="Ingrese Ciudad de Origen ..."  [(ngModel)]="egres.ciudad" disabled>
+    </div>
+    <div id="codigo_modal">
+    <label for=""> Código de Egresado: </label>
+        <input id="codigo3" type="text" class="form-control" placeholder="Ingrese su Código de Egresado ..." [(ngModel)]="egres.codigo_egresado" disabled>
+    </div>
+    <div id="horario_modal">
+    <label for=""> Horario Disponible: </label>
+        <input id="horario3" type="text" class="form-control" placeholder="Ingrese el horario en el que esta disponible ..."  [(ngModel)]="egres.horario" disabled>
+    </div>
+    <div id="universidad_modal">
+    <label for=""> Universidad: </label>
+        <input id="universidad3" type="text" class="form-control" placeholder="Ingrese el nombre de su Universidad ..." [(ngModel)]="egres.universidad" disabled>
+    </div>
+    <label for=""> Grado de Profesión : </label>
+        <input id="grado3" type="text" class="form-control" placeholder="Ingrese el grado de Profesión que posee ..." [(ngModel)]="egres.grado" disabled>
+    
+    </div>
+    
+           </div>
+           <div class="modal-footer">
+            <button type="button" class="btn btn-danger" style="margin-right: 600px; text-align: center;" (click)="block2()"><mat-icon style="margin-top: 5px;">block</mat-icon></button>
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+             <button id="butoncito3" type="button" class="btn btn-primary" (click)="UpdateEgresado(egres)" data-bs-dismiss="modal" disabled>Guardar Cambios</button>
+           </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade bd-example-modal-lg" id="DatosEstudiante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" *ngFor="let estu of listEstudianteID" style="width: 950px; margin-left: -75px;">
+        <div class="modal-header" >
+          <h5 class="modal-title" id="exampleModalLabel">DATOS PSICOLOGO:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div style="width: 38%; float: left;">
+                <img src="../../../assets/image/psico_user.png" alt="" width="250px" style="margin-left: 50px; margin-top: 20px;">
+                <div id="data">
+                    <label for="" style="font-size:20px; font-weight: bold;">{{estu.nombre}}</label><br>
+                    <label for="" style="font-size:20px; font-weight: bold; margin-top: -5px;">{{estu.apellido}}</label><br>
+                    <label for="" style="font-family: cursive;">ESTUDIANTE</label>
+                        <div id="buton_modal">
+                                <button mat-fab color="accent" aria-label="Example icon button with a home icon" class="btn_modal">
+                                    <mat-icon>wallpaper</mat-icon>
+                                </button>
+                                <button mat-fab color="primary" aria-label="Example icon button with a bookmark icon" class="btn_modal" (click)="modificar()">
+                                    <mat-icon>create</mat-icon>
+                                </button>
+                                <button mat-fab color="warn" aria-label="Example icon button with a delete icon" class="btn_modal" (click)="DeleteEstudiante(estu)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                        </div>
+                </div>
+            </div>
+<div style="width: 60%; float: right;">
+    <div id="nombre_modal">
+    <label for=""> Nombres: </label>
+        <input id="nombre2" type="text" class="form-control" placeholder="Ingrese los nombres ..." [(ngModel)]="estu.nombre" disabled>
+    </div>
+    <div id="apellido_modal">
+    <label for=""> Apellidos: </label>
+        <input id="apellido2" type="text" class="form-control" placeholder="Ingrese los Apellidos ..." [(ngModel)]="estu.apellido" disabled>
+    </div>
+    <label for=""> Correo Electrónico: </label>
+        <input id="correo2" type="text" class="form-control" placeholder="Ingrese Correo Electrónico ..." [(ngModel)]="estu.correo" disabled>
+    <div id="genero_modal">
+    <label for=""> Género: </label>
+        <select  name="" id="genero2" class="form-control"  [(ngModel)]="estu.genero" disabled>
+            <option value="No Especifica">No especificar</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+    </div>
+    <div id="dni_modal">
+    <label for=""> Ingrese su DNI: </label>
+        <input id="dni2" type="text" class="form-control" placeholder="Ingrese Nro. DNI ..."  [(ngModel)]="estu.dnipasaporte" disabled>
+    </div>
+    <div id="celular_modal">
+    <label for=""> Número de Celular: </label>
+        <input id="celular2" type="text" class="form-control" placeholder="Ingrese Nro. Celular ..." [(ngModel)]="estu.celular" disabled>
+    </div>
+    <div id="ciudad_modal">
+    <label for=""> Ciudad: </label>
+        <input id="ciudad2" type="text" class="form-control" placeholder="Ingrese Ciudad de Origen ..."  [(ngModel)]="estu.ciudad" disabled>
+    </div>
+    <div id="codigo_modal">
+    <label for=""> Código de Estudiante: </label>
+        <input id="codigo2" type="text" class="form-control" placeholder="Ingrese su Código de Egresado ..." [(ngModel)]="estu.codigo_estudiante" disabled>
+    </div>
+    <div id="horario_modal">
+     <label for=""> Horario Disponible: </label>
+        <input id="horario2" type="text" class="form-control" placeholder="Ingrese el horario en el que esta disponible ..." [(ngModel)]="estu.horario" disabled>
+    </div>
+    <div id="ciclo_modal">
+    <label for=""> Ciclo de Estudio : </label>
+        <input id="ciclo2" type="number" class="form-control" placeholder="Ingrese el ciclo que cursa ..." [(ngModel)]="estu.ciclo" disabled>
+    </div>
+    <div id="grupo_modal">
+    <label for=""> Grupo de Estudio : </label>
+        <input id="grupo2" type="number" class="form-control" placeholder="Ingrese el grupo en el que se encuentra ..." [(ngModel)]="estu.grupo" disabled>
+    </div>
+    <label for=""> Universidad: </label>
+        <input id="universidad2" type="text" class="form-control" placeholder="Ingrese el nombre de su Universidad ..." [(ngModel)]="estu.universidad" disabled>
+</div>    
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-danger" style="margin-right: 600px; text-align: center;" (click)="block()"><mat-icon style="margin-top: 5px;">block</mat-icon></button>
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+             <button type="button" id="butoncito2" class="btn btn-primary" (click)="UpdateEstudiante(estu)" data-bs-dismiss="modal" disabled>Guardar Cambios</button>
+           </div>
+      </div>
+    </div>
+  </div>
+<div class="tabs">
+  <div class="tab-header">
+    <div class="active" style="width: 50%;">REPORTE DE ESTUDIANTE</div>
+    <div style="width: 50%;">REPORTE DE EGRESADO</div>
+  </div>
+      <div class="tab-content" >
+          <div class="active" id="Estudiante">
+            <header id="title_estudiante">
+              <h1 id="t_estu">REPORTE DE </h1>
+              <h1 id="t_estu" style="margin-top: 15px;">    ESTUDIANTES</h1>
+              <h2 id="sub_estu">Reporte de todos los psicólogos en nivel de estudiantes registrados en el sistema:</h2>
+              <img src="../../../assets/image/registro_psicologo.png" alt="" width="150px" id="logo_registro">
+            </header>
+            <header id="caja_estudiante">
+                  <header id="list_estudiante" *ngFor="let estudiante of listEstudiantes" style="margin-left: 350px;">
+                        <header id="contenedor_list">
+                                <label for="" id="nombres">{{estudiante.nombre}} {{estudiante.apellido}}</label><br>
+                                <label for="" id="correo">Correo: </label>
+                                    <label for="" id="lbl_correo"> {{estudiante.correo}}</label><br>
+                                <label for="" id="codigo">Código Egresado:  </label>
+                                    <label for="" id="lbl_codigo"> {{estudiante.codigo_estudiante}}</label>
+                        </header>
+                              <img src="../../../assets/image/psico_user.png" alt="" id="user">
+                              <i class="fas fa-chevron-circle-right" id="icon" data-bs-toggle="modal" data-bs-target="#DatosEstudiante" (click)="getEstudiantesID(estudiante)"></i>
+                  </header>
+              </header>
+          </div>
+
+          <div id="Egresado">
+            <header id="title_estudiante">
+                <h1 id="t_estu">REPORTE DE </h1>
+                <h1 id="t_estu" style="margin-top: 15px;">    EGRESADOS</h1>
+                <h2 id="sub_estu">Reporte de todos los psicólogos en nivel de egresados registrados en el sistema:</h2>
+                <img src="../../../assets/image/registro_psicologo.png" alt="" width="150px" id="logo_registro">
+              </header>
+              <header id="caja_egresado">
+                    <div id="list_egresado" *ngFor="let egresado of listEgresado" style="margin-left: 350px;">
+                        <div id="contenedor_list">
+                                <label for="" id="nombres">{{egresado.nombre}} {{egresado.apellido}}</label><br>
+                                <label for="" id="correo">Correo: </label>
+                                    <label for="" id="lbl_correo"> {{egresado.correo}}</label><br>
+                                <label for="" id="codigo">Código Egresado:  </label>
+                                    <label for="" id="lbl_codigo"> {{egresado.codigo_egresado}}</label>
+                        </div>
+                                <img src="../../../assets/image/psico_user.png" alt="" id="user">
+                                <i class="fas fa-chevron-circle-right" id="icon" data-bs-toggle="modal" data-bs-target="#DatosEgresado" (click)="getEgresadosID(egresado)"></i>
+                    </div>
+                </header>
+          </div>
+      </div>
+</div>

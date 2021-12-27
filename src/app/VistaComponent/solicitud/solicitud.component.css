@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+body{
+    background: url('../../../assets/image/bolas.jpeg');
+      height: 100%;
+      width: 100%;
+}
+#images{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+#logo{
+    width: 400px;
+    margin-top: 80px;
+}
+.txt{
+    font-family: cursive;
+    font-style: italic ;
+    font-size: 20px;
+    width: 70%;
+    margin-top:10px;
+    margin-left: 100px;
+}
+.imagesoli{
+    margin-top: 20px;
+    width: 65%;
+}
+#caja_formulario{
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding: center;
+}
+#formulario{
+    margin: auto;
+    margin-top: 45px;
+    overflow: auto;
+    width: 80%;
+    height: 580px;
+    color: black;
+}
+#formulario::-webkit-scrollbar{
+  width:2px;
+  background: transparent;
+}
+
+#formulario::-webkit-scrollbar-thumb{
+  background: transparent;
+  border-radius: 5px;
+}
+#nombre{
+    float: left;
+    width: 49%;
+}
+#apellido{
+    float:right;
+    width: 49%;
+}
+#dni{
+    float: left;
+    width: 34%;
+}
+#eg{
+    float: right;
+    width: 64%;
+}
+#edad{
+    float: left;
+    width: 49%;
+}
+#genero{    
+    
+    float: right;
+    width: 49%;
+}
+#ciudad{
+    float: left;
+    width: 34%;
+}
+#direccion{
+    float: right;
+    width: 64%;
+}
+#correo{
+    float: left;
+    width: 64%;
+}
+#celular{
+    float: right;
+    width: 34%;
+}
+#preferencia{
+    float: left;
+    width: 49%;
+}
+#horario{
+    float: right;
+    width: 49%;
+}
+label{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+h1{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: -40px;
+    color: #148e8a;
+    font-family: 'Dongle', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+#enviarSoli{
+    margin-top: 10px;
+    width: 40%;
+    margin: center;
+    margin-left: 200px;
+}

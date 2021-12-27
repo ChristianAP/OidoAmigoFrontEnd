@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body{
+  overflow: auto;
+  height: 590px;;
+}
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+    margin-top: 10px;
+  }
+  h1{
+    font-family: 'Roboto', sans-serif;
+  }
+
+  #caja{
+    vertical-align: center;
+    background-color: rgb(160, 55, 55);
+    padding-top: -420px;
+  }
+
+  #caja2{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 21px;
+    vertical-align: center;
+  }
+
+  #txt_prin{
+    width: 600px;
+    height: 100%;
+  }
+  #title{
+    vertical-align:center;
+  }
+  #left{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 16px;
+    border-right: 1px solid black;
+    width: 49%;
+    height: 90px;
+    margin-bottom: 20px;
+  }
+  #right{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 16px;
+    width: 49%;
+    border-left: 1px solid black;
+    height: 90px;
+    margin-bottom: 20px;
+  }

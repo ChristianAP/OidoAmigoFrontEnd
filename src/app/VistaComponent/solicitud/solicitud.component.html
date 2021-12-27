@@ -1,0 +1,87 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<body>
+    <div id="images">
+        <img src="../../../assets/image/OidoAmigoNormal.png" alt="" id="logo">
+        <p class="txt">Vamos a crear tu cuenta personal y asignarte el el mejor psicólogo acorte a tus necesidades. En solo unos sencillos pasos ...</p>
+        <img src="../../../assets/image/imageSoli.png" alt="" class="imagesoli">
+    </div>
+    <div id="caja_formulario">
+                <h1>CUENTANOS SOBRE TI</h1>
+            <div id="formulario">
+                <label for="">¿Qué quieres solucionar con la asistencia psicológica?</label>
+                <select name="" class="form-control" id="problema" placeholder="Seleccione los campos con los que se identifique" [(ngModel)]="solicitud.idarea" >
+                    <option value="">Seleccione una opción</option>
+                    <option *ngFor="let area of listarAreas" value="{{area.idarea}}">{{area.nombre}}</option>
+                </select>
+                <div id="preferencia">
+                    <label for="">Prefiero que mi psicólogo/a sea:</label>
+                    <select name="" class="form-control" id="prefe" [(ngModel)]="solicitud.preferencia">
+                        <option value="No definido">Seleccione opción</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div id="horario">
+                    <label for="">¿En que día le gustaria ser atendido?</label>
+                    <select name="" class="form-control" id="dias" [(ngModel)]="solicitud.horario">
+                        <option value="">Seleccione opción</option>
+                        <option value="Domingo">Domingo</option>
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Sábado">Sábado</option>
+                    </select>
+                </div>
+                <div id="nombre">
+                    <label for="">Nombres:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Ingrese sus Nombres ..." [(ngModel)]="solicitud.nombre">
+                </div>
+                <div id="apellido">
+                    <label for="">Apellidos:</label> 
+                    <input type="text" class="form-control" id="ape" placeholder="Ingrese sus Apellidos ..." [(ngModel)]="solicitud.apellido">
+                </div>
+                <div id="dni">
+                    <label for="">D.N.I. :</label>
+                    <input type="text" class="form-control" id="docID" placeholder="Ingrese su DNI ..." [(ngModel)]="solicitud.dnipasaporte">
+                </div>
+                <div id="eg">
+                    <div id="edad">
+                        <label for="">Edad:</label>
+                        <input type="number" id="ed" class="form-control" [(ngModel)]="solicitud.edad">
+                    </div>
+                    <div id="genero">
+                    <label for="">Genero:</label>
+                        <select name="" id="gen" class="form-control" [(ngModel)]="solicitud.genero">
+                            <option value="Sin Especificar">Seleccione opción</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div id="correo">
+                    <label for="">Correo Electrónico:</label>
+                    <input type="email" id="mail"class="form-control" placeholder="Ingrese sus Correo Electrónico ..." [(ngModel)]="solicitud.correo">
+                </div>
+                <div id="celular">
+                    <label for="">Celular:</label>
+                    <input type="text" id="cel" class="form-control" placeholder="Ingrese su Celular ..." [(ngModel)]="solicitud.celular">
+                </div>
+                <div id="ciudad">
+                    <label for="">Ciudad:</label>
+                    <input type="text" id="ciu" class="form-control" placeholder="Ingrese sus Ciudad ..." [(ngModel)]="solicitud.ciudad">
+                </div>
+                <div id="direccion">
+                    <label for="">Dirección:</label>
+                    <input type="text" id="dire" class="form-control" placeholder="Ingrese su dirección ..." [(ngModel)]="solicitud.direccion">
+                </div>
+                <label for="exampleFormControlTextarea1">Ingrese una breve descripción de su Problema</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="solicitud.descripcion"></textarea>
+        
+            </div>
+            <button mat-flat-button color="warn" id="enviarSoli" (click)="generarSolicitud()"> ENVIAR SOLICITUD</button>
+       
+    </div>
+</body>

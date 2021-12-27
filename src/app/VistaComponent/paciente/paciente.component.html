@@ -1,0 +1,421 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+<div id="no_data">
+    <p style="color: black; font-size: 20px; font-weight: bold;">No se le ah asignado ningún Paciente ...</p>
+    <img src="../../../assets/image/espera.png" alt="" style="width: 350px; margin-top: 50px;">
+</div>
+
+<div id="data" >
+    <div *ngFor="let list of listPaciente">
+        <h1 id="title">DATOS DE PACIENTE ASIGNADO</h1>
+        <p>A continuación se muestra los datos generales del paciente que se le fue asignado: </p>
+        <div id="data_persona">
+            <div id="logo">
+                <img src="../../../assets/image/paciente.png" alt="" style="width: 100px; margin-top: 10px;">
+                <p >{{list.nombre}}</p>
+                <p style="margin-top: -10px; font-weight: bold;">{{list.apellido}}</p>
+                <p style="margin-top: -10px; font-family: cursive; text-transform: uppercase; margin-bottom: 15px;">{{list.nombre_rol}}</p>
+            </div>
+            
+            <p><strong >CÓDIGO DE PACIENTE:</strong> {{list.codigo_paciente}}</p>
+            <hr>
+
+            <p><strong style="margin-right: 48px;">CORRÉO:</strong> {{list.correo}}</p>
+            <hr>
+
+            <p><strong style="margin-right: 70px;">EDAD:</strong> {{list.edad}}</p>
+            <hr>
+
+            <p><strong style="margin-right: 50px;">GENERO:</strong> {{list.genero}}</p>
+            <hr>
+
+            <p><strong style="margin-right: 85px;">DNI:</strong>{{list.dnipasaporte}}</p>
+            <hr>
+
+            <p><strong style="margin-right: 45px;">CELULAR:</strong> {{list.celular}}</p>
+            <hr>
+
+            <p><strong style="margin-right: 28px;">SITUACIÓN:</strong> {{list.ciudad}}</p>
+            <hr>
+
+            <p><strong style="margin-right: 28px;">DIRECCIÓN:</strong> {{list.direccion}}</p>
+            <hr>
+
+            <p><strong style="margin-right: 50px; margin-bottom: 20px;">CIUDAD:</strong> {{list.ciudad}}</p>
+            
+        </div>
+        <div id="data_paciente">
+            <div id="data_solicitud" style="margin-top: 25px;">
+                    <p><strong style="margin-right: 28px;">CODIGO PACIENTE:</strong> {{list.codigo_paciente}}</p>
+                    <hr>
+
+                    <p><strong style="margin-right: 10px;">PROBLEMA A TRATAR:</strong> {{list.nombre_area}}</p>
+                    <hr>
+
+                    <p><strong style="margin-right: 45px; margin-bottom: 20px;">DÍAS A ATENDER:</strong> {{list.horario}}</p>
+                    </div>
+            <div id="descripcion" style="margin-top: 25px;">
+                <p style="margin-left: -35px; font-weight: bold;">DESCRIPCIÓN DEL CASO: </p><br>
+                <textarea class="form-control" id="cajaDescripcion" rows="3" disabled style="font-size: 14px;">{{list.descripcion}}</textarea>
+            </div>
+        </div>
+        <div id="sesiones">
+            <div id="generarSesion">
+                <div id="centro">
+                    <div id="sesion1">
+                        <label for="" id="t_sesion1">SESION 1</label>
+                            <div id="agree" >
+                                <button id="btn_agree"  (click)="getData(list.sesion1)" data-bs-toggle="modal" data-bs-target="#DatosEstudiante">
+                                    <i class="far fa-calendar-plus" ></i>
+                               </button>
+                            </div>
+                            <div id="hov">
+                                <div id="data2" *ngFor="let s1 of sesion1">
+                                    <p style="font-size:17px">{{s1.fecha}}</p>
+                                    <p style="font-size:17px">{{s1.hora}}</p>
+                                    
+                                </div>
+
+                                <div id="edit2">
+                                    <button id="editarSesion2" (click)="getData(list.sesion1)" data-bs-toggle="modal" data-bs-target="#DatosEstudiante">
+                                        <i class="far fa-edit" style="margin-left: 15px"></i>
+                                    </button>
+                                </div>
+                            </div>                            
+                            <div id="a"  *ngFor="let s11 of sesion1">
+                                <p> <i class="fas fa-video" style="color: white; margin-top: 5px; margin-right: 10px;"></i><a href="{{s11.url}}" target="_blank" style="color: white; text-decoration: none"> INGRESAR</a></p>
+                            </div>
+                    </div>
+
+                        <div id="s23">
+                            <div id="sesion2">
+                            <label for="" id="t_sesion2">SESION 2</label>
+                                <div id="agree1" >
+                                    <button id="btn_agree" (click)="getData(list.sesion2)" data-bs-toggle="modal" data-bs-target="#DatosEstudiante">
+                                         <i class="far fa-calendar-plus"></i>
+                                    </button>
+                                </div>
+                                <div id="hov">
+                                    <div id="data2" *ngFor="let s2 of sesion2">
+                                        <p style="font-size:17px">{{s2.fecha}}</p>
+                                        <p style="font-size:17px">{{s2.hora}}</p>
+                                        
+                                    </div>
+
+                                    <div id="edit2">
+                                        <button id="editarSesion2" (click)="getData(list.sesion2)" data-bs-toggle="modal" data-bs-target="#DatosEstudiante">
+                                            <i class="far fa-edit" style="margin-left: 15px"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div id="a"  *ngFor="let s22 of sesion2">
+                                    <p> <i class="fas fa-video" style="color: white; margin-top: 5px; margin-right: 10px;"></i><a href="{{s22.url}}" target="_blank" style="color: white; text-decoration: none"> INGRESAR</a></p>
+                                </div>
+                            </div>
+
+                            <div id="sesion3">
+                                <label for="" id="t_sesion3">SESION 3</label>
+                                    <div id="agree2" >
+                                        <button id="btn_agree" (click)="getData(list.sesion3)" data-bs-toggle="modal" data-bs-target="#DatosEstudiante">
+                                            <i class="far fa-calendar-plus"></i>
+                                       </button>
+                                    </div>
+                                    <div id="hov">
+                                        <div id="data2" *ngFor="let s3 of sesion3">
+                                            <p style="font-size:17px">{{s3.fecha}}</p>
+                                            <p style="font-size:17px">{{s3.hora}}</p>
+                                            
+                                        </div>
+    
+                                        <div id="edit2">
+                                            <button id="editarSesion2" (click)="getData(list.sesion3)" data-bs-toggle="modal" data-bs-target="#DatosEstudiante">
+                                                <i class="far fa-edit" style="margin-left: 15px"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="a"  *ngFor="let s33 of sesion3">
+                                        <p> <i class="fas fa-video" style="color: white; margin-top: 5px; margin-right: 10px;"></i><a href="{{s33.url}}" target="_blank" style="color: white; text-decoration: none"> INGRESAR</a></p>
+                                    </div>
+                            </div>
+
+                        </div>
+                </div>
+                <div id="estate" style="margin-top: 15px;">
+                    <p style="font-weight: bold; font-size: 20px; margin-left: 350px;">ESTADO DEL CASO:</p>
+                    <p style="margin-top: -42px; margin-left: 550px;font-size: 20px;">{{this.estado}}</p>
+                    
+                </div>
+            </div>
+            <div id="reportes">
+                <div id="btns_reportes">
+                    <button id="report1" style=" text-align: center;" (click)="getReporte(list.sesion1)" data-bs-toggle="modal" data-bs-target="#reporte">
+                        <mat-icon style="font-size: 35px; text-align: center; margin-top: 10px;">speaker_notes</mat-icon><br>
+                        <p style="font-size:15px"> REPORTE SESION 1</p>
+                    </button>
+                    <button id="report2" (click)="getReporte(list.sesion2)" data-bs-toggle="modal" data-bs-target="#reporte">
+                        <mat-icon style="font-size: 35px; text-align: center; margin-top: 10px;">speaker_notes</mat-icon><br>
+                        <p style="font-size:15px"> REPORTE SESION 2</p>
+
+                    </button>
+                    <button id="report3" (click)="getReporte(list.sesion3)" data-bs-toggle="modal" data-bs-target="#reporte">
+                        <mat-icon style="font-size: 35px; text-align: center; margin-top: 10px;">speaker_notes</mat-icon><br>
+                        <p style="font-size:15px"> REPORTE SESION 3</p>
+
+                    </button>
+                    <button id="reportFinal" data-bs-toggle="modal" data-bs-target="#ReporteFinal">
+                        <mat-icon style="font-size: 35px; text-align: center; margin-top: 10px;" >speaker_notes</mat-icon><br>
+                        <p style="font-size:15px"> GENERAR REPORTE FINAL</p>
+
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- CREAR SESIÓN -->
+<div class="modal fade bd-example-modal-lg" id="DatosEstudiante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" *ngFor="let editS of sesionID">
+        <div class="modal-header"  >
+          <h1 class="modal-title" id="exampleModalLabel" style="margin-bottom: -10px;font-weight: bold;">GENERAR SESIÓN</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="caja1" style="float: left; width: 30%">
+            <img src="../../../assets/image/sesion.png" width="150px" alt="" style="margin-left: 30px;">
+          </div>
+          <div id="caja2" style="float: right; width: 69%">
+              <div id="fecha_lbl">
+                  <label for="" style="font-size: 15px; font-weight: bold;">Ingresa Fecha de la Sesión ...</label>
+                  <input type="date" class="form-control" [(ngModel)]="editS.fecha">
+              </div>
+              <div id="hora_lbl">
+                  <label for="" style="font-size: 15px;font-weight: bold;">Ingresa la hora de la Sesión ...</label>
+                  <input type="time" class="form-control" [(ngModel)]="editS.hora">
+              </div>
+              <div id="url_lbl">
+                  <label for="" style="font-size: 15px;font-weight: bold;">Ingresar URL del Meet al que debe de unirse ...</label>
+                  <input type="text" class="form-control" [(ngModel)]="editS.url">
+              </div>          
+          </div>
+            
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+             <button type="button" id="butoncito2" class="btn btn-primary" data-bs-dismiss="modal" (click)="createSesion(editS)" >Guardar Cambios</button>
+           </div>
+      </div>
+    </div>
+  </div>
+<!-- GENERAR REPORTE DE SESIÓN -->
+  <div class="modal fade bd-example-modal-lg" id="reporte" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg"  >
+      <div class="modal-content" *ngFor="let report of reporteID" style="width:1200px; margin-left: -180px;">
+        <div class="modal-header"  >
+          <h1 class="modal-title" id="exampleModalLabel" style="margin-bottom: -10px;font-weight: bold;">GENERAR REPORTE DE SESIÓN</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="re" style="float: left; width: 35%; margin-top: 80px;">
+            <h2 style="text-align: center; font-size: 25px; font-weight: bold;">REPORTE SESIÓN </h2>
+            <p style=" font-size: 15px;">Ingrese el reporte de la Sesión Desarrollada ...</p>
+            <img src="../../../assets/image/report2.png" width="350px" alt="" style="margin-left: 50px;">
+
+          </div>
+          <div id="caj" style="float: right; width: 65%;">
+          <div id="obs_lbl">
+            <label for="">OBSERVACIONES GENERALES: </label>
+            <textarea type="text" class="form-control" [(ngModel)]="report.obs_generales"  rows="5"></textarea>
+          </div>
+          <div id="ant_lbl">
+            <label for="">ANTECEDENTES: </label>
+            <textarea type="text" class="form-control" [(ngModel)]="report.antecedentes"  rows="5"></textarea>
+          </div>
+            <div id="prob_lbl">
+              <label for="">PROBLEMA TRATADO: </label>
+              <textarea type="text" class="form-control" [(ngModel)]="report.problem_actual"  rows="5"></textarea>
+            </div>
+            <div id="acc_lbl">
+              <label for="">ACCIONES REALIZADAS EN LA SESIÓN: </label>
+              <textarea type="text" class="form-control" [(ngModel)]="report.acciones_realiz"  rows="5"></textarea>
+            </div>
+            <div id="concl_lbl">
+              <label for="">CONCLUSIONES LLEGADAS EN LA SESIÓN: </label>
+              <textarea type="text" class="form-control" [(ngModel)]="report.conclusiones"  rows="5"></textarea>
+            </div>
+            <div id="reco_lbl">
+              <label for="">RECOMENDACIONES REALIZADAS: </label>
+              <textarea type="text" class="form-control" [(ngModel)]="report.recomendaciones"  rows="5"></textarea>
+            </div>  
+          </div>          
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+             <button type="button" id="butoncito2" class="btn btn-primary" data-bs-dismiss="modal" (click)="createReporte(report)" >Guardar Cambios</button>
+           </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPORTE FINAL -->
+<div class="modal fade bd-example-modal-lg" id="ReporteFinal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" >
+      <div class="modal-content" >
+        <div class="modal-header"   >
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="width: 100%;">
+            <body>
+                <h1 id="h12" *ngFor="let paci of reportFinal" style="font-size: 28px; margin-top: 15px; margin-bottom: 25px; color: #005a68">REPORTE FINAL DEL PACIENTE  - <strong style="font-size: 28px; margin-left:-2px; text-transform: uppercase;">{{paci.nombre}}, {{paci.apellido}}</strong></h1>
+                <p style="font-size: 17px; width: 95%; margin-left: 10px; text-align: justify; margin-bottom: 25px;">
+                    A continuación se muestra una recopilación de los 3 reportes generados a partir de las 3 sesiones desarrolladas. Sirvase revisarlas detenidamente y
+                    defina si dar por finalizada la sesión o determina que el paciente necesita otras sesiones, en este caso el paciente quedará en espera a que se le asigne 
+                    otro psicólogo que continue su caso.
+                </p>
+                <mat-accordion *ngFor="let paci of reportFinal" >
+                  <mat-expansion-panel hideToggle style="background-color: rgb(255, 255, 255);  width: 90%; margin: auto; margin-bottom: 20px;">
+                    <mat-expansion-panel-header style="height: 80px; background-color: #b05369;" id="caja">
+                      <mat-panel-title style="color:white;  " id="caja2">
+                        <div id="txt_prin">
+                            <img src="../../../assets/image/paciente.png" alt="" width="50px" style="float: left; margin-right: 30px;  margin-top: 8px;" >
+                            <label id="title2" for="" style="float: left; margin-top: 16px; font-size: 25px;">{{paci.nombre}}, {{paci.apellido}}</label>
+                           
+                        </div> 
+                        <div id="code" style="margin-left: 30px; font-size: 15px;">
+                          <i class="fas fa-hand-holding-heart"></i>
+                              <label for=""> Edad: {{paci.edad}} años</label><br><br>
+                              <i class="fas fa-phone-volume"></i>
+                              <label for=" "> Celular: {{paci.celular}}</label>
+                            </div>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header >
+                      <div id="dat" style="color: black; margin-top: 20px; margin-bottom: 20px">
+                            <div id="left" style="float: left;">
+                              <div style="margin-top: 15px; margin-left: 70px;">
+                                <i class="fas fa-envelope-open-text" style="font-weight: bold;color:#b05369;"></i>
+                                <label for="" style="font-weight: bold;color:#b05369;"> Correo: </label>
+                                <label for=""> {{paci.correo}}</label><br><br>
+                                <i class="fas fa-id-card" style="font-weight: bold;color:#b05369;"></i>
+                                <label for="" style="font-weight: bold;color:#b05369;"> D. N. I. : </label>
+                                <label for=""> {{paci.dnipasaporte}}</label>
+                              </div>
+                            </div>
+              
+                            <div id="right" style="float: right"> 
+                              <div style="margin-top: 15px; margin-left: 70px;">
+                                <i class="fas fa-balance-scale" style="font-weight: bold;color:#b05369"></i>
+                                <label for="" style="font-weight: bold;color:#b05369;"> Estado de la Consulta: </label>
+                                <label for="">  {{paci.estado}}</label><br><br>
+                                <i class="fas fa-server" style="font-weight: bold;color:#b05369;"></i>
+                                <label for="" style="font-weight: bold;color:#b05369;"> Nro. de sesiones: </label>
+                                <label for=""> 3 sesiones</label><br><br>
+                              </div> 
+                                
+                            </div>          
+                      </div>
+                      <div id="reportes" style="margin-top:100px">
+                        
+                              <!-- SESION 1  -->
+                              <mat-expansion-panel style="border: 1px solid #b05369;background-color: white; color:black; width: 33%; float:left;" (opened)="panelOpenState = true"
+                                                  (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header style=" color:black; background-color: #b05369;">
+                                  <mat-panel-title style=" color:white; background-color: #b05369; font-weight: bold;  padding-left: 40px;">
+                                    REPORTE DE LA SESION 1 
+                                  </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <br>
+                                      <label for="" style="font-weight: bold;"> <i class="fas fa-clock" style="margin-right: 10px;"></i> HORA DE LA SESIÓN: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.hora1}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-calendar-day" style="margin-right: 10px;"></i>  FECHA DE LA SESIÓN: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.fecha1}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-highlighter" style="margin-right: 10px;"></i> URL DE LA SESIÓN: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.url1}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="far fa-eye" style="margin-right: 10px;"></i> OBSERVACIONES GENERALES: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.obs_generales1}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-concierge-bell" style="margin-right: 10px;"></i> ANTECEDENTES: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.antecedentes1}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> PROBLEMA TRATADO: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.problem_actual1}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-book-reader" style="margin-right: 10px;"></i> ACCIONES REALIZADAS: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.acciones_realiz1}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-clipboard" style="margin-right: 10px;"></i> CONCLUSIONES REALIZADAS: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.conclusiones1}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-laptop-medical" style="margin-right: 10px;"></i> RECOMENDACIONES: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.recomendaciones1}}</div><br>                        
+                              </mat-expansion-panel>
+                              <div id="report23" style="float: right; width: 66%; ">
+                                  <!-- SESION 2  -->
+                                  <mat-expansion-panel style="border: 1px solid #b05369;background-color: white; color:black; width: 49%; float: left; " (opened)="panelOpenState = true"
+                                                      (closed)="panelOpenState = false" >
+                                    <mat-expansion-panel-header style=" color:black; background-color: #b05369;">
+                                      <mat-panel-title style=" color:white; background-color: #b05369; font-weight: bold;  padding-left: 40px;">
+                                        REPORTE DE LA SESION 2
+                                      </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <br>
+                                      <label for="" style="font-weight: bold;"> <i class="fas fa-clock" style="margin-right: 10px;"></i> HORA DE LA SESIÓN: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.hora2}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-calendar-day" style="margin-right: 10px;"></i>  FECHA DE LA SESIÓN: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.fecha2}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-highlighter" style="margin-right: 10px;"></i> URL DE LA SESIÓN: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.url2}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="far fa-eye" style="margin-right: 10px;"></i> OBSERVACIONES GENERALES: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.obs_generales2}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-concierge-bell" style="margin-right: 10px;"></i> ANTECEDENTES: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.antecedentes2}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> PROBLEMA TRATADO: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.problem_actual2}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-book-reader" style="margin-right: 10px;"></i> ACCIONES REALIZADAS: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.acciones_realiz2}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-clipboard" style="margin-right: 10px;"></i> CONCLUSIONES REALIZADAS: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.conclusiones2}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-laptop-medical" style="margin-right: 10px;"></i> RECOMENDACIONES: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.recomendaciones2}}</div><br>     
+                                  </mat-expansion-panel>
+              
+                                  <!-- SESION 3 -->
+                                  <mat-expansion-panel style=" border: 1px solid #b05369;background-color: white; color:black; width: 49%; float: right;" (opened)="panelOpenState = true"
+                                                      (closed)="panelOpenState = false">
+                                    <mat-expansion-panel-header style=" color:black; background-color: #b05369;">
+                                      <mat-panel-title style=" color:white; background-color: #b05369; font-weight: bold;  padding-left: 40px;">
+                                        REPORTE DE LA SESION 3
+                                      </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <br>
+                                      <label for="" style="font-weight: bold;"> <i class="fas fa-clock" style="margin-right: 10px;"></i> HORA DE LA SESIÓN: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.hora3}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-calendar-day" style="margin-right: 10px;"></i>  FECHA DE LA SESIÓN: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.fecha3}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-highlighter" style="margin-right: 10px;"></i> URL DE LA SESIÓN: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.url3}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="far fa-eye" style="margin-right: 10px;"></i> OBSERVACIONES GENERALES: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.obs_generales3}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-concierge-bell" style="margin-right: 10px;"></i> ANTECEDENTES: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.antecedentes3}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> PROBLEMA TRATADO: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.problem_actual3}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-book-reader" style="margin-right: 10px;"></i> ACCIONES REALIZADAS: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.acciones_realiz3}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-clipboard" style="margin-right: 10px;"></i> CONCLUSIONES REALIZADAS: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.conclusiones3}}</div><br>
+                                      <label for="" style="font-weight: bold; "> <i class="fas fa-laptop-medical" style="margin-right: 10px;"></i> RECOMENDACIONES: </label><br>
+                                        <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.recomendaciones3}}</div><br>       
+                                  </mat-expansion-panel>
+                              </div>
+                      </div>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </body>
+           </div>
+           <div class="modal-footer" style="padding: auto" *ngFor="let paci of reportFinal">
+                <button type="button" class="btn btn-danger" id="fin" style="margin-right: 300px;" (click)="finalizar(paci)"  data-bs-dismiss="modal" aria-label="Close"> <i class="fas fa-eye" ></i> FINALIZAR ATENCIÓN </button>
+           </div>
+      </div>
+    </div>
+  </div>

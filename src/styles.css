@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~ngx-toastr/toastr';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/** Overrides underline color **/
+.my-form-field.mat-form-field-appearance-legacy .mat-form-field-underline,
+.my-form-field.mat-form-field-appearance-legacy .mat-form-field-ripple,
+.my-form-field.mat-form-field-appearance-legacy.mat-focused
+  .mat-form-field-underline,
+.my-form-field.mat-form-field-appearance-legacy.mat-focused
+  .mat-form-field-ripple {
+  background-color: black;
+}
+
+/** Overrides label color **/
+.my-form-field.mat-form-field-appearance-legacy .mat-form-field-label,
+.my-form-field.mat-form-field-appearance-legacy.mat-focused
+  .mat-form-field-label {
+  color: black;
+}
+
+/** Overrides caret & text color **/
+.my-form-field.mat-form-field-appearance-legacy .mat-input-element {
+  caret-color: black;
+  color: black;
+}

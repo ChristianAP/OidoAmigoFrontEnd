@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  
+<h1 style="margin-top: 10px; margin-bottom: 40px; font-size:40px;" id="h1">REPORTES DE LOS PACIENTES ATENDIDOS</h1>
+<body>
+  <mat-accordion *ngFor="let paci of listarPaciente" >
+    <mat-expansion-panel hideToggle style="background-color: rgb(255, 255, 255);  width: 90%; margin: auto; margin-bottom: 20px;">
+      <mat-expansion-panel-header style="height: 80px; background-color: #1ab975;" id="caja">
+        <mat-panel-title style="color:white;  " id="caja2">
+          <div id="txt_prin">
+              <img src="../../../assets/image/paciente.png" alt="" width="50px" style="float: left; margin-right: 30px;" >
+              <label id="title" for="" style="float: left; margin-top: 20px;">{{paci.nombre}}, {{paci.apellido}}</label>
+             
+          </div> 
+          <div id="code" style="margin-left: 30px; font-size: 15px;">
+            <i class="fas fa-hand-holding-heart"></i>
+                <label for=""> Edad: {{paci.edad}} años</label><br><br>
+                <i class="fas fa-phone-volume"></i>
+                <label for=" "> Celular: {{paci.celular}}</label>
+              </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header >
+        <div id="dat" style="color: black; margin-top: 20px; margin-bottom: 20px">
+              <div id="left" style="float: left;">
+                <div style="margin-top: 15px; margin-left: 70px;">
+                  <i class="fas fa-envelope-open-text" style="font-weight: bold;color:#00affd;"></i>
+                  <label for="" style="font-weight: bold;color:#00affd;"> Correo: </label>
+                  <label for=""> {{paci.correo}}</label><br><br>
+                  <i class="fas fa-id-card" style="font-weight: bold;color:#00affd;"></i>
+                  <label for="" style="font-weight: bold;color:#00affd;"> D. N. I. : </label>
+                  <label for=""> {{paci.dnipasaporte}}</label>
+                </div>
+              </div>
+
+              <div id="right" style="float: right"> 
+                <div style="margin-top: 15px; margin-left: 70px;">
+                  <i class="fas fa-balance-scale" style="font-weight: bold;color:#00affd;"></i>
+                  <label for="" style="font-weight: bold;color:#00affd;"> Estado de la Consulta: </label>
+                  <label for="">  {{paci.estado}}</label><br><br>
+                  <i class="fas fa-server" style="font-weight: bold;color:#00affd;"></i>
+                  <label for="" style="font-weight: bold;color:#00affd;"> Nro. de sesiones: </label>
+                  <label for=""> 3 sesiones</label><br><br>
+                </div> 
+                  
+              </div>          
+        </div>
+        <div id="reportes" style="margin-top:100px">
+          
+                <!-- SESION 1  -->
+                <mat-expansion-panel style="border: 1px solid #1ab975;background-color: white; color:black; width: 33%; float:left;" (opened)="panelOpenState = true"
+                                    (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header style=" color:black; background-color: black;">
+                    <mat-panel-title style=" color:white; background-color: black; font-weight: bold;  padding-left: 70px;">
+                      REPORTE DE LA SESION 1 
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <br>
+                        <label for="" style="font-weight: bold;"> <i class="fas fa-clock" style="margin-right: 10px;"></i> HORA DE LA SESIÓN: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.hora1}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-calendar-day" style="margin-right: 10px;"></i>  FECHA DE LA SESIÓN: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.fecha1}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-highlighter" style="margin-right: 10px;"></i> URL DE LA SESIÓN: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.url1}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="far fa-eye" style="margin-right: 10px;"></i> OBSERVACIONES GENERALES: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.obs_generales1}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-concierge-bell" style="margin-right: 10px;"></i> ANTECEDENTES: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.antecedentes1}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> PROBLEMA TRATADO: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.problem_actual1}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-book-reader" style="margin-right: 10px;"></i> ACCIONES REALIZADAS: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.acciones_realiz1}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-clipboard" style="margin-right: 10px;"></i> CONCLUSIONES REALIZADAS: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.conclusiones1}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-laptop-medical" style="margin-right: 10px;"></i> RECOMENDACIONES: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.recomendaciones1}}</div><br>                        
+                </mat-expansion-panel>
+                <div id="report23" style="float: right; width: 66%; ">
+                    <!-- SESION 2  -->
+                    <mat-expansion-panel style="border: 1px solid #1ab975;background-color: white; color:black; width: 49%; float: left; " (opened)="panelOpenState = true"
+                                        (closed)="panelOpenState = false" >
+                      <mat-expansion-panel-header style=" color:black; background-color: black;">
+                        <mat-panel-title style=" color:white; background-color: black; font-weight: bold;  padding-left: 70px;">
+                          REPORTE DE LA SESION 2
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <br>
+                        <label for="" style="font-weight: bold;"> <i class="fas fa-clock" style="margin-right: 10px;"></i> HORA DE LA SESIÓN: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.hora2}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-calendar-day" style="margin-right: 10px;"></i>  FECHA DE LA SESIÓN: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.fecha2}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-highlighter" style="margin-right: 10px;"></i> URL DE LA SESIÓN: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.url2}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="far fa-eye" style="margin-right: 10px;"></i> OBSERVACIONES GENERALES: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.obs_generales2}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-concierge-bell" style="margin-right: 10px;"></i> ANTECEDENTES: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.antecedentes2}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> PROBLEMA TRATADO: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.problem_actual2}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-book-reader" style="margin-right: 10px;"></i> ACCIONES REALIZADAS: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.acciones_realiz2}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-clipboard" style="margin-right: 10px;"></i> CONCLUSIONES REALIZADAS: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.conclusiones2}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-laptop-medical" style="margin-right: 10px;"></i> RECOMENDACIONES: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.recomendaciones2}}</div><br>     
+                    </mat-expansion-panel>
+
+                    <!-- SESION 3 -->
+                    <mat-expansion-panel style=" border: 1px solid #1ab975;background-color: white; color:black; width: 49%; float: right;" (opened)="panelOpenState = true"
+                                        (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header style=" color:black; background-color: black;">
+                        <mat-panel-title style=" color:white; background-color: black; font-weight: bold;  padding-left: 70px;">
+                          REPORTE DE LA SESION 3
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <br>
+                        <label for="" style="font-weight: bold;"> <i class="fas fa-clock" style="margin-right: 10px;"></i> HORA DE LA SESIÓN: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.hora3}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-calendar-day" style="margin-right: 10px;"></i>  FECHA DE LA SESIÓN: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.fecha3}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-highlighter" style="margin-right: 10px;"></i> URL DE LA SESIÓN: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.url3}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="far fa-eye" style="margin-right: 10px;"></i> OBSERVACIONES GENERALES: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.obs_generales3}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-concierge-bell" style="margin-right: 10px;"></i> ANTECEDENTES: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.antecedentes3}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> PROBLEMA TRATADO: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.problem_actual3}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-book-reader" style="margin-right: 10px;"></i> ACCIONES REALIZADAS: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.acciones_realiz3}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-clipboard" style="margin-right: 10px;"></i> CONCLUSIONES REALIZADAS: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.conclusiones3}}</div><br>
+                        <label for="" style="font-weight: bold; "> <i class="fas fa-laptop-medical" style="margin-right: 10px;"></i> RECOMENDACIONES: </label><br>
+                          <div style="width:100%; text-align: center; margin-bottom: -10px; margin-top: 10px;">{{paci.recomendaciones3}}</div><br>       
+                    </mat-expansion-panel>
+                </div>
+        </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</body>
